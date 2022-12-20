@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -20,7 +21,7 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        if ($blog == null) {
+        if (!isset($post)) {
             return response()->json([
                 "status" => false,
                 "message" => "Post tidak ditemukan",
