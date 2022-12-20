@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
+    public function all()
     {
         $posts = Post::all();
         return response()->json([
